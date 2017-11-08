@@ -2,7 +2,64 @@
   <div>
     <myheader></myheader>
     <div class="body">
-      ddd
+      <div class="path">
+        <div class="path-wrap">
+          Dashboard
+        </div>
+      </div>
+      <div class="contest">
+        <div class="title">
+          <div class="title-wrap">
+            ALL TRACKS
+          </div>
+        </div>
+        <div class="track">
+          <div class="track-list-1 track-list">
+            <div class="track-title">CORE CS</div>
+            <div class="track-item">
+              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
+              <div class="tracl-item-text">Algorithms</div>
+            </div>
+            <div class="track-item">
+              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
+              <div class="tracl-item-text">Algorithms</div>
+            </div>
+            <div class="track-item">
+              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
+              <div class="tracl-item-text">Algorithms</div>
+            </div>
+            <div class="track-item">
+              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
+              <div class="tracl-item-text">Algorithms</div>
+            </div>
+            <div class="track-item">
+              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
+              <div class="tracl-item-text">Algorithms</div>
+            </div>
+          </div>
+          <div class="track-list-2 track-list">
+            <div class="track-title">TUTORIALS</div>
+            <div class="track-item">
+              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
+              <div class="tracl-item-text">Algorithms</div>
+            </div>
+          </div>
+          <div class="track-list-3 track-list">
+            <div class="track-title">SPECIALIZED SKILLS</div>
+            <div class="track-item">
+              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
+              <div class="tracl-item-text">Algorithms</div>
+            </div>
+          </div>
+          <div class="track-list-4 track-list">
+            <div class="track-title">LANGUAGES</div>
+            <div class="track-item">
+              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
+              <div class="tracl-item-text">Algorithms</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <myfooter></myfooter>
   </div>
@@ -28,7 +85,102 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .body{
-    margin: 50px 0 50px 0;
+  .body {
+    margin: 65px 0 65px 0;
+  }
+
+  .path {
+    height: 65px;
+    width: 100%;
+    /*background-color: royalblue;*/
+    border-bottom: 1px solid #e0e4e8;
+    padding-left: 20px;
+  }
+
+  .path-wrap {
+    width: 1440px;
+    margin: 0 auto;
+    line-height: 65px;
+    color: #979faf;
+    font-weight: bold;
+    /*font*/
+  }
+
+  .title {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .title-wrap {
+    width: 1400px;
+    margin: 0 auto;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .track {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .track-list {
+    position: absolute;
+    width: 24%;
+  }
+
+  .track-list-1 {
+    left: 0;
+  }
+
+  .track-list-2 {
+    left: 25%;
+  }
+
+  .track-list-3 {
+    left: 50%;
+  }
+
+  .track-list-4 {
+    left: 75%;
+  }
+
+  .track-title {
+    height: 40px;
+    line-height: 40px;
+    color: #979faf;
+    font-weight: bold;
+  }
+
+  .track-item {
+    border-bottom: 1px dotted #333;
+    height: 100px;
+    margin-top: 15px;
+    position: relative;
+  }
+
+  .track-item:hover {
+    border: 1px solid #2ec866;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 13px 0 19px 0;
+    transition: margin 0.4s ease-in-out, border 0.1s;
+  }
+  .tracl-item-img{
+    position: absolute;
+    top:50%;
+    margin-top: -25px;
+    left: 10px;
+  }
+  .tracl-item-text{
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    top:50%;
+    margin-top: -15px;
+    left: 90px;
+    color: #444;
+    font-weight: bold;
   }
 </style>
