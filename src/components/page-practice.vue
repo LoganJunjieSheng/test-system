@@ -16,25 +16,9 @@
         <div class="track">
           <div class="track-list-1 track-list">
             <div class="track-title">CORE CS</div>
-            <div class="track-item">
+            <div class="track-item" v-for="(item, index) in track1 ">
               <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">Algorithms</div>
-            </div>
-            <div class="track-item">
-              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">Algorithms</div>
-            </div>
-            <div class="track-item">
-              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">Algorithms</div>
-            </div>
-            <div class="track-item">
-              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">Algorithms</div>
-            </div>
-            <div class="track-item">
-              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">Algorithms</div>
+              <div class="tracl-item-text">{{track1[index].name}}</div>
             </div>
           </div>
           <div class="track-list-2 track-list">
@@ -73,7 +57,13 @@
   export default {
     name: 'practice',
     data() {
-      return {}
+      return {
+        track1:[
+          {
+            name:'Algorithms'
+          }
+        ]
+      }
     },
     methods: {},
     components: {
