@@ -6,6 +6,7 @@ import compete from '@/components/page-compete'
 import log from '@/components/page-log'
 import signup from '@/components/page-signup'
 import test from '@/components/page-test'
+import testlist from '@/components/page-testlist'
 
 
 Vue.use(Router)
@@ -41,6 +42,11 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: test
+    },
+    {
+      path: '/testlist',
+      name: 'testlist',
+      component: testlist
     },
   ]
 })
