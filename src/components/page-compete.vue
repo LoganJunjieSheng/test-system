@@ -11,12 +11,18 @@
         <div class="contest-list">
           <div class="title">Active Contests</div>
           <div class="contest-item" v-for="(item, index) in contestItem">
-            <div class="item-classification">{{contestItem[index].classification}}</div>
-            <div class="item-score">
-              Highest score:
-              <span class="height-score">{{contestItem[index].score}}</span>
-            </div>
-            <button class="btn btn-success item-btn">Enter</button>
+
+              <div class="item-classification">{{contestItem[index].classification}}</div>
+              <div class="item-score">
+                Highest score:
+                <span class="height-score">{{contestItem[index].score}}</span>
+              </div>
+
+            <button class="btn btn-success item-btn">
+              <router-link to="/testlist" style="color: #333;text-decoration: none;">
+              Enter
+              </router-link>
+            </button>
           </div>
         </div>
         <div class="sidebar">
