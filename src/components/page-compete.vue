@@ -12,17 +12,16 @@
           <div class="title">Active Contests</div>
           <div class="contest-item" v-for="(item, index) in contestItem">
 
-              <div class="item-classification">{{contestItem[index].classification}}</div>
-              <div class="item-score">
-                Highest score:
-                <span class="height-score">{{contestItem[index].score}}</span>
-              </div>
-
-            <button class="btn btn-success item-btn">
-              <router-link to="/testlist" style="color: #333;text-decoration: none;">
-              Enter
-              </router-link>
-            </button>
+            <div class="item-classification">{{contestItem[index].classification}}</div>
+            <div class="item-score">
+              Highest score:
+              <span class="height-score">{{contestItem[index].score}}</span>
+            </div>
+            <router-link to="/testlist" style="color: #333;text-decoration: none;">
+              <button class="btn btn-success item-btn">
+                Enter
+              </button>
+            </router-link>
           </div>
         </div>
         <div class="sidebar">
@@ -213,11 +212,13 @@
     font-weight: bold;
     font-size: 15px;
   }
-  .occupation-input{
+
+  .occupation-input {
     display: inline-block;
     height: 15px;
   }
-  .occupation-item{
+
+  .occupation-item {
     display: inline-block;
     height: 20px;
     line-height: 20px;

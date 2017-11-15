@@ -18,30 +18,44 @@
             <div class="track-title">CORE CS</div>
             <div class="track-item" v-for="(item, index) in track1 ">
               <router-link to="/testlist">
-              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">{{track1[index].name}}</div>
+                <div class="track-wrap">
+                  <img :src="track1[index].imgUrl" class="tracl-item-img" height="50" width="50"/>
+                  <div class="tracl-item-text">{{track1[index].name}}</div>
+                </div>
               </router-link>
             </div>
           </div>
           <div class="track-list-2 track-list">
             <div class="track-title">TUTORIALS</div>
-            <div class="track-item">
-              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">Algorithms</div>
+            <div class="track-item" v-for="(item, index) in track2 ">
+              <router-link to="/testlist">
+                <div class="track-wrap">
+                  <img :src="track2[index].imgUrl" class="tracl-item-img" height="50" width="50"/>
+                  <div class="tracl-item-text">{{track2[index].name}}</div>
+                </div>
+              </router-link>
             </div>
           </div>
           <div class="track-list-3 track-list">
             <div class="track-title">SPECIALIZED SKILLS</div>
-            <div class="track-item">
-              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">Algorithms</div>
+            <div class="track-item" v-for="(item, index) in track3 ">
+              <router-link to="/testlist">
+                <div class="track-wrap">
+                  <img :src="track3[index].imgUrl" class="tracl-item-img" height="50" width="50"/>
+                  <div class="tracl-item-text">{{track3[index].name}}</div>
+                </div>
+              </router-link>
             </div>
           </div>
           <div class="track-list-4 track-list">
             <div class="track-title">LANGUAGES</div>
-            <div class="track-item">
-              <img src="../assets/cplus.png" class="tracl-item-img" height="50" width="50"/>
-              <div class="tracl-item-text">Algorithms</div>
+            <div class="track-item" v-for="(item, index) in track4 ">
+              <router-link to="/testlist">
+                <div class="track-wrap">
+                  <img :src="track4[index].imgUrl" class="tracl-item-img" height="50" width="50"/>
+                  <div class="tracl-item-text">{{track4[index].name}}</div>
+                </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -60,10 +74,88 @@
     name: 'practice',
     data() {
       return {
-        track1:[
+//        defaultUrl:''
+        track1: [
           {
-            name:'Algorithms'
-          }
+            name: 'Algorithms',
+            imgUrl: require('../assets/Algorithms.png')
+          },
+          {
+            name: 'Data Structures',
+            imgUrl: require('../assets/Data Structures.png')
+          },
+          {
+            name: 'Mathematics',
+            imgUrl: require('../assets/Mathematics.png')
+          },
+
+        ],
+        track2: [
+          {
+            name: '30 Day of Code',
+            imgUrl: require('../assets/Code.png')
+          },
+          {
+            name: 'Cracking the Coding Interview',
+            imgUrl: require('../assets/Cracking the Coding Interview.png')
+          },
+          {
+            name: '10 Days of Statistics',
+            imgUrl: require('../assets/Statistics.png')
+          },
+          {
+            name: '10 Days of JavaScript',
+            imgUrl: require('../assets/JavaScript.png')
+          },
+        ],
+        track3: [
+          {
+            name: 'Artificial Intelligence',
+            imgUrl: require('../assets/Artificial Intelligence.png')
+          },
+          {
+            name: '30 Day of SQL',
+            imgUrl: require('../assets/SQL.png')
+          },
+          {
+            name: '30 Day of Database',
+            imgUrl: require('../assets/Database.png')
+          },
+          {
+            name: 'Distributed Systems',
+            imgUrl: require('../assets/Distributed.png')
+          },
+          {
+            name: 'Regex',
+            imgUrl: require('../assets/Regex.png')
+          },
+          {
+            name: 'Security',
+            imgUrl: require('../assets/Security.png')
+          },
+
+        ],
+        track4: [
+          {
+            name: 'C++',
+            imgUrl: require('../assets/cplus.png')
+          },
+          {
+            name: 'Java',
+            imgUrl: require('../assets/Java.png')
+          },
+          {
+            name: 'Ruby',
+            imgUrl: require('../assets/Ruby.png')
+          },
+          {
+            name: 'Linux Shell',
+            imgUrl: require('../assets/Linux.png')
+          },
+          {
+            name: 'Functional Programming',
+            imgUrl: require('../assets/Functional Programming.png')
+          },
         ]
       }
     },
@@ -137,6 +229,11 @@
     left: 75%;
   }
 
+  .track-wrap {
+    width: 100%;
+    height: 100%
+  }
+
   .track-title {
     height: 40px;
     line-height: 40px;
@@ -145,9 +242,9 @@
   }
 
   .track-item {
-    border-bottom: 1px dotted #333;
-    height: 100px;
-    margin-top: 15px;
+    border-bottom: 1px dotted #ccc;
+    height: 80px;
+    /*margin-top: 15px;*/
     position: relative;
   }
 
@@ -156,20 +253,23 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    margin: 13px 0 19px 0;
-    transition: margin 0.4s ease-in-out, border 0.1s;
+    box-shadow:0 4px 8px 0 rgba(51,51,51,.1);
+      /*margin: 13px 0 19px 0;*/
+    /*transition:  .4s ;*/
   }
-  .tracl-item-img{
+
+  .tracl-item-img {
     position: absolute;
-    top:50%;
+    top: 50%;
     margin-top: -25px;
     left: 10px;
   }
-  .tracl-item-text{
+
+  .tracl-item-text {
     position: absolute;
     height: 30px;
     line-height: 30px;
-    top:50%;
+    top: 50%;
     margin-top: -15px;
     left: 90px;
     color: #444;

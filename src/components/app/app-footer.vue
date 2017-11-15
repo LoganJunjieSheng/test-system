@@ -28,6 +28,7 @@
     width: 100%;
     /*background-color: #39424e;*/
     border-top: 1px solid #e0e4e8;
+    background-color: white;
   }
 
   .wrap {

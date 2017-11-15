@@ -11,8 +11,18 @@
         <span>Compete</span>
       </router-link>
       <div class="user">
-        <span class=" glyphicon glyphicon-user"></span>
-        logan_junjiesheng
+        <div class="user-name" :class="{active:isLogin}">
+          <!--<span class=" glyphicon glyphicon-user"></span>-->
+          <!--<span>{{usename}}</span>-->
+        </div>
+        <div class="user-log" :class="{active:isLogin}">
+          <router-link to="/log" class="router">
+            <button class="btn btn-success btn-margin">log in</button>
+          </router-link>
+          <router-link to="/signup" class="router">
+            <button class="btn btn-default">sign up</button>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -22,7 +32,10 @@
   export default {
     name: 'app-header',
     data() {
-      return {}
+      return {
+        usename: "logan",
+        isLogin: true
+      }
     },
     methods: {}
   }
@@ -30,6 +43,15 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .active {
+    display: none;
+  }
+
+  .router {
+    color: #333;
+    text-decoration: none;
+  }
+
   .app-header {
     position: fixed;
     top: 0;
@@ -85,6 +107,21 @@
     right: 0;
     top: 50%;
     margin-top: -32.5px;
+  }
+
+  .user-name {
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .user-log {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  .btn-margin {
+    margin-right: 30px;;
   }
 
   .link-active {
