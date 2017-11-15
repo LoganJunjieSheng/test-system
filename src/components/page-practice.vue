@@ -170,7 +170,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .body {
-    margin: 65px 0 65px 0;
+    margin: 0px 0 65px 0;
   }
 
   .path {

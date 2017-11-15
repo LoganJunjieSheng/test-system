@@ -53,7 +53,7 @@
   }
 
   .app-header {
-    position: fixed;
+    position: relative;
     top: 0;
     height: 65px;
     width: 100%;

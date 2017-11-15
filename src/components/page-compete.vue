@@ -27,10 +27,12 @@
         <div class="sidebar">
           <div class="title">Occupation</div>
           <div class="occupation-list" v-for="(item, index) in occupationList">
-            <input type="checkbox" class="occupation-input">
-            <div class="occupation-item">{{occupationList[index]}}</div>
+            <input type="radio" class="occupation-input" :id="item.id" name="occupation-list"
+                   @click="occupationChoice(item)">
+            <label :for="item.id" class="occupation-item">{{item.id}}</label>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -47,14 +49,14 @@
     name: 'compete',
     data() {
       return {
-        contestItem: [
+        DEFAULT_CONTEST_ITEM: [
           {
             classification: 'Algorithm',
             score: '100',
             path: ''
           },
           {
-            classification: ' C++ Programming Language',
+            classification: 'C++ Programming Language',
             score: '100',
             path: ''
           },
@@ -90,18 +92,88 @@
           },
 
         ],
+        contestItem: [],
         occupationList: [
-          'Front-end engineers',
-          'Back-end engineer',
-          'Algorithm Engineer',
-          'Artificial intelligence engineer',
+          {
+            id: 'All Contest',
+            contestItem: [
+              'Algorithm',
+              'C++ Programming Language',
+              'Java',
+              'Python',
+              'Html+CSS',
+              'JavaScript',
+              'Data structure',
+              'Qt',
+            ]
+          },
+          {
+            id: 'Front-end engineers',
+            contestItem: [
+              'Algorithm',
+              'Html+CSS',
+              'JavaScript',
+              'Data structure'
+            ]
+          },
+          {
+            id: 'Back-end engineer',
+            contestItem: [
+              'Algorithm',
+              'Java',
+              'Python',
+              'Data structure'
+            ]
+          },
+          {
+            id: 'Algorithm Engineer',
+            contestItem: [
+              'Algorithm',
+              'C++ Programming Language',
+              'Python',
+              'Data structure',
+            ]
+          },
+          {
+            id: 'Artificial intelligence engineer',
+            contestItem: [
+              'Algorithm',
+              'C++ Programming Language',
+              'Python',
+              'Data structure',
+            ]
+          },
         ]
       }
     },
-    methods: {},
+    methods: {
+      occupationChoice: function (item) {
+//        http://blog.csdn.net/chelen_jak/article/details/28886311
+//        对contestItem数组初始化
+        this.contestItem = this.DEFAULT_CONTEST_ITEM
+        var tempArray1 = [];//临时数组1
+        var tempArray2 = [];//临时数组2
+//        给tempArray1临时数组赋值，tempArray1数组的形式为[Algorithm:true,Java:true]
+        for (var i = 0; i < item.contestItem.length; i++) {
+          tempArray1[item.contestItem[i]] = true
+        }
+//        将contestItem[i].classification的值与tempArray1作比较，如匹配，push contestItem[i].classification的值到tempArray2
+        for (var i = 0; i < this.contestItem.length; i++) {
+          if (tempArray1[this.contestItem[i].classification]) {
+            tempArray2.push(this.contestItem[i])
+          }
+        }
+
+        this.contestItem=tempArray2;
+
+      }
+    },
     components: {
       myheader,
       myfooter
+    },
+    created: function () {
+      this.contestItem = this.DEFAULT_CONTEST_ITEM
     }
   }
 </script>
@@ -109,7 +181,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .body {
-    margin: 65px 0 65px 0;
+    margin: 0px 0 65px 0;
   }
 
   .path {
@@ -163,6 +235,7 @@
 
   .contest-item:hover {
     border: 1px solid #979faf;
+    box-shadow: 0 4px 8px 0 rgba(51, 51, 51, .1);
   }
 
   .item-classification {
@@ -222,5 +295,6 @@
     display: inline-block;
     height: 20px;
     line-height: 20px;
+    cursor: pointer;
   }
 </style>

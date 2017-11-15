@@ -29,6 +29,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .body{
-    margin: 50px 0 50px 0;
+    margin: 0px 0 50px 0;
   }
 </style>
