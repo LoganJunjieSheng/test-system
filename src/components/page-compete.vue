@@ -11,13 +11,12 @@
         <div class="contest-list">
           <div class="title">Active Contests</div>
           <div class="contest-item" v-for="(item, index) in contestItem">
-
             <div class="item-classification">{{contestItem[index].classification}}</div>
             <div class="item-score">
               Highest score:
               <span class="height-score">{{contestItem[index].score}}</span>
             </div>
-            <router-link to="/testlist" style="color: #333;text-decoration: none;">
+            <router-link to="/compete/testlist" style="color: #333;text-decoration: none;">
               <button class="btn btn-success item-btn">
                 Enter
               </button>
@@ -187,7 +186,6 @@
   .path {
     height: 65px;
     width: 100%;
-    /*background-color: royalblue;*/
     border-bottom: 1px solid #e0e4e8;
     padding-left: 20px;
   }
@@ -198,7 +196,6 @@
     line-height: 65px;
     color: #979faf;
     font-weight: bold;
-    /*font*/
   }
 
   .contest {
@@ -221,7 +218,6 @@
     font-size: 18px;
     font-weight: 600;
     margin-top: 10px;
-
   }
 
   .contest-item {
@@ -275,7 +271,6 @@
 
   .sidebar {
     width: 300px;
-    /*background-color: beige;*/
     position: absolute;
     right: 0;
   }

@@ -17,7 +17,7 @@
           <div class="track-list-1 track-list">
             <div class="track-title">CORE CS</div>
             <div class="track-item" v-for="(item, index) in track1 ">
-              <router-link to="/testlist">
+              <router-link to="/practice/testlist">
                 <div class="track-wrap">
                   <img :src="track1[index].imgUrl" class="tracl-item-img" height="50" width="50"/>
                   <div class="tracl-item-text">{{track1[index].name}}</div>
@@ -28,7 +28,7 @@
           <div class="track-list-2 track-list">
             <div class="track-title">TUTORIALS</div>
             <div class="track-item" v-for="(item, index) in track2 ">
-              <router-link to="/testlist">
+              <router-link to="/practice/testlist">
                 <div class="track-wrap">
                   <img :src="track2[index].imgUrl" class="tracl-item-img" height="50" width="50"/>
                   <div class="tracl-item-text">{{track2[index].name}}</div>
@@ -39,7 +39,7 @@
           <div class="track-list-3 track-list">
             <div class="track-title">SPECIALIZED SKILLS</div>
             <div class="track-item" v-for="(item, index) in track3 ">
-              <router-link to="/testlist">
+              <router-link to="/practice/testlist">
                 <div class="track-wrap">
                   <img :src="track3[index].imgUrl" class="tracl-item-img" height="50" width="50"/>
                   <div class="tracl-item-text">{{track3[index].name}}</div>
@@ -50,7 +50,7 @@
           <div class="track-list-4 track-list">
             <div class="track-title">LANGUAGES</div>
             <div class="track-item" v-for="(item, index) in track4 ">
-              <router-link to="/testlist">
+              <router-link to="/practice/testlist">
                 <div class="track-wrap">
                   <img :src="track4[index].imgUrl" class="tracl-item-img" height="50" width="50"/>
                   <div class="tracl-item-text">{{track4[index].name}}</div>
@@ -77,14 +77,17 @@
 //        defaultUrl:''
         track1: [
           {
+            species:'CORE CS',
             name: 'Algorithms',
             imgUrl: require('../assets/Algorithms.png')
           },
           {
+            species:'CORE CS',
             name: 'Data Structures',
             imgUrl: require('../assets/Data Structures.png')
           },
           {
+            species:'CORE CS',
             name: 'Mathematics',
             imgUrl: require('../assets/Mathematics.png')
           },
@@ -92,44 +95,54 @@
         ],
         track2: [
           {
+            species:'TUTORIALS',
             name: '30 Day of Code',
             imgUrl: require('../assets/Code.png')
           },
           {
+            species:'TUTORIALS',
             name: 'Cracking the Coding Interview',
             imgUrl: require('../assets/Cracking the Coding Interview.png')
           },
           {
+            species:'TUTORIALS',
             name: '10 Days of Statistics',
             imgUrl: require('../assets/Statistics.png')
           },
           {
+            species:'TUTORIALS',
             name: '10 Days of JavaScript',
             imgUrl: require('../assets/JavaScript.png')
           },
         ],
         track3: [
           {
+            species:'SPECIALIZED SKILLS',
             name: 'Artificial Intelligence',
             imgUrl: require('../assets/Artificial Intelligence.png')
           },
           {
+            species:'SPECIALIZED SKILLS',
             name: '30 Day of SQL',
             imgUrl: require('../assets/SQL.png')
           },
           {
+            species:'SPECIALIZED SKILLS',
             name: '30 Day of Database',
             imgUrl: require('../assets/Database.png')
           },
           {
+            species:'SPECIALIZED SKILLS',
             name: 'Distributed Systems',
             imgUrl: require('../assets/Distributed.png')
           },
           {
+            species:'SPECIALIZED SKILLS',
             name: 'Regex',
             imgUrl: require('../assets/Regex.png')
           },
           {
+            species:'SPECIALIZED SKILLS',
             name: 'Security',
             imgUrl: require('../assets/Security.png')
           },
@@ -137,22 +150,27 @@
         ],
         track4: [
           {
+            species:'LANGUAGES',
             name: 'C++',
             imgUrl: require('../assets/cplus.png')
           },
           {
+            species:'LANGUAGES',
             name: 'Java',
             imgUrl: require('../assets/Java.png')
           },
           {
+            species:'LANGUAGES',
             name: 'Ruby',
             imgUrl: require('../assets/Ruby.png')
           },
           {
+            species:'LANGUAGES',
             name: 'Linux Shell',
             imgUrl: require('../assets/Linux.png')
           },
           {
+            species:'LANGUAGES',
             name: 'Functional Programming',
             imgUrl: require('../assets/Functional Programming.png')
           },

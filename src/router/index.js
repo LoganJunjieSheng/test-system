@@ -24,9 +24,19 @@ export default new Router({
       component: practice
     },
     {
+      path: '/practice/testlist',
+      name: 'testlist',
+      component: testlist
+    },
+    {
       path: '/compete',
       name: 'compete',
       component: compete
+    },
+    {
+      path: '/compete/testlist',
+      name: 'testlist',
+      component: testlist
     },
     {
       path: '/log',
@@ -43,10 +53,6 @@ export default new Router({
       name: 'test',
       component: test
     },
-    {
-      path: '/testlist',
-      name: 'testlist',
-      component: testlist
-    },
+
   ]
 })
