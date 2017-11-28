@@ -7,6 +7,7 @@ import log from '@/components/page-log'
 import signup from '@/components/page-signup'
 import test from '@/components/page-test'
 import testlist from '@/components/page-testlist'
+import entrying from '@/components/page-entrying'
 
 
 Vue.use(Router)
@@ -17,6 +18,11 @@ export default new Router({
       path: '/',
       name: 'index',
       component: index
+    },
+    {
+      path: '/entrying',
+      name: 'entrying',
+      component: entrying
     },
     {
       path: '/practice',

@@ -1,5 +1,5 @@
 <template>
-  <div class="app-header">
+  <div class="app-header" style="z-index:1000">
     <div class="wrap">
       <div class="logo"><img src="../../assets/logo.png" height="43" width="160"/></div>
       <router-link to="/practice" class="practice" active-class="link-active">

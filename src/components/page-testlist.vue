@@ -51,7 +51,7 @@
                     <span class="body-font">Difficulty:</span>
                     <span >Easy</span>
                   </div>
-                  <div class="pull-right pos-button"  >
+                  <div class="pull-right pos-button"  style="display: inline-block;position: absolute;top: 35px;right: 40px">
                     <router-link to="/test" style="color: #333;text-decoration: none;">
                       <button  class="btn btn-success item-btn" >
                         Enter
@@ -273,7 +273,10 @@
 
   <!-- -----------------我是华丽的分割线----------------- -->
   .pos-button{
-    display: inline-block;position: absolute;top: 35px;right: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 35px;
+    right: 40px;
   }
 
   .practiceText1{
