@@ -1,28 +1,39 @@
 <template>
-  <div>
+  <div style="z-index: 10;position: relative">
     <myheader></myheader>
+    <!--body是全部的内容-->
     <div class="body">
       <div id="main">
         <div id="target">
-          <div id="guide">
-            <span> <a href=""><strong>寒武纪首页></strong></a>
-            <a href=""><strong>在线测试</strong></a></span>
+          <!--guide是导航栏，可以跳转到首页-->
+          <!--<div id="guide">-->
+            <!--<span> <a href=""><strong>寒武纪首页></strong></a>-->
+            <!--<p style="display: inline-block"><strong>在线测试</strong></p></span>-->
+          <!--</div>-->
+          <div class="path">
+            <div class="path-wrap">
+              <span>Dashboard > </span>
+            </div>
           </div>
+          <!--这是一条横线-->
           <div>
             <hr style="color: #9ea7b2;">
           </div>
+          <!--hd是题目的标题还有题目的发布者，之后应该要更改-->
           <div id="hd">
             <span style="font-size:40px;; font-weight :600">
                 Cambricon Test 1</span> <br>
             by <a id="master">小明</a>
           </div>
+          <!--choosePart是选择题目（problem）或者已提交代码（Submissions）-->
           <div id="choosePart">
             <br>
             <button id="qB" value="1" onclick="problemShow()">Problem</button>
             <button id="submissionsButton" value="2" onclick="submissionsShow()">Submissions</button>
           </div>
-
+          <!--question是题目区的全部部分，包括问题内容及打代码的地方-->
           <div id="question">
+            <!--text1是问题正文，之后需要更改成可传入图片的形式-->
             <div id="text1">
               <strong>Problem1:</strong>
               <br>
@@ -39,6 +50,7 @@
               <img width="100%"
                    src="http://a3.qpic.cn/psb?/V14LSvUU4cfkK3/LST7nZYppMZNP4849kTo.NhiILX4rMUNQ7P3ZpUNur8!/b/dHYBAAAAAAAA&ek=1&kp=1&pt=0&bo=cQTgAHEE4AARADc!&tm=1510038000&sce=0-12-12&rf=viewer_311">
               <!--src="http://b271.photo.store.qq.com/psb?/V12MK4LM04eZFZ/GAT*rvi0tp8e3pnpU0Qy78e3u3IFka8YjjCxb2KnsA0!/b/dA8BAAAAAAAA&bo=yQBoAQAAAAAREIc!&rf=viewer_311">-->
+              <!--time是倒计时部分-->
               <div id="time">
                 <div id="countdown">
                   <br>
@@ -48,33 +60,49 @@
                   <input style="display: none" type="button" value="开始">
                 </div>
               </div>
-              <div id="code">
-                <div id="chooseLangerage">
-                  <p style="font-size: 30px">&nbsp &nbsp&nbsp<strong>Code</strong></p>
-                  <select class="btn btn dropdown-toggle" style="border: solid #c2c7d0 0.5px">
-                    <!--选择语言-->
-                    <option>C</option>
-                    <option>C++</option>
-                    <option>Java</option>
-                    <option>PHP</option>
-                    <option>Phyton</option>
-                    <!--<option></option>-->
-                  </select>
+              <!--code是写代码的所有地方-->
+              <div style="position: relative;z-index: 5">
+                <div id="code">
+                  <!--chooseLangerage是选择所需编程语言的地方，选择之后传参数到后端-->
+                  <div id="chooseLangerage" style="position: relative">
+                    <p style="font-size: 30px">&nbsp &nbsp&nbsp<strong>Code</strong></p>
+                    <select class="btn btn dropdown-toggle" style="border: solid #c2c7d0 0.5px">
+                      <!--选择语言-->
+                      <option value="1">C</option>
+                      <option value="2">C++</option>
+                      <option value="3">Java</option>
+                      <option value="4">PHP</option>
+                      <option value="5">Python</option>
+                      <!--<option></option>-->
+                    </select>
+                  </div>
+                  <!--type1是真正的代码区，即实际写代码的地方-->
+                  <div id="type1" style="position: relative">
+                  <textarea id="type2">
+                  </textarea>
+                  </div>
+                  <div id="run" style="z-index: 5;background-color:#ffffff;position: relative ">
+                    <button class="btn btn-default "
+                            id="runB1" onclick="resultShow()">Run Code
+                    </button>
+                    <button class="btn btn-default "
+                            id="runB2" onclick="alertShow();submissionsShow()">Submit Code
+                    </button>
+                  </div>
+
                 </div>
-                <div id="type1">
-                  <textarea id="type2"></textarea>
-                </div>
-                <div id="run">
-                  <button class="btn btn-default "
-                          id="runB1">Run Code
-                  </button>
-                  <button class="btn btn-default "
-                          id="runB2" onclick="alertShow();submissionsShow()">Submit Code
-                  </button>
+                <div id="result">
+                  <p style="background-color:#f7f7f7">Input</p>
+                  <p style="">1 2 3 4</p>
+                  <p style="background-color:#f7f7f7">Output</p>
+                  <p style="">4 3 2 1</p>
+                  <p style="background-color:#f7f7f7">Others:</p>
                 </div>
               </div>
             </div>
           </div>
+          <!--sub是查看已提交代码的区域，包含了运行的结果得分等等-->
+
           <div id="sub">
             <table id="subTable">
               <thead>
@@ -113,11 +141,38 @@
           </div>
         </div>
       </div>
+      <!--<pre class="hljs">-->
+      <!--<code>-->
+      <!--function problemShow() {-->
+      <!--tab2.style.display = "none";-->
+      <!--tab1.style.display = "block";-->
+      <!--}-->
+      <!--</code>-->
+      <!--</pre>-->
     </div>
     <myfooter></myfooter>
     <script type="application/javascript">
+      <!--editor是代码区的方法，主要作用是决定代码区代码的样式-->
+      var editor = CodeMirror.fromTextArea(document.getElementById("type2"), {
+        lineNumbers: true,     // 显示行数
+        indentUnit: 4,         // 缩进单位为4
+        styleActiveLine: true, // 当前行背景高亮
+        matchBrackets: true,   // 括号匹配
+        lineWrapping: true,    // 自动换行
+//        mode:   //
+        theme: 'default',     //样式
+      });
+
+
+      //      这部分是用于切换problem和Submissions两个tab的
       let tab1 = document.getElementById("question");
       let tab2 = document.getElementById("sub");
+      var result1 = document.getElementById("result");
+
+      function resultShow() {
+        result1.style.display = "block";
+
+      }
 
       function problemShow() {
         tab2.style.display = "none";
@@ -156,7 +211,7 @@
       myfooter,
     }
   }
-
+  //这部分是负责倒计时的
   window.onload = function () {
     var oCountDown = document.getElementById("countdown");
     var aInput = oCountDown.getElementsByTagName("input")[0];
@@ -195,14 +250,38 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .path {
+    height: 65px;
+    width: 100%;
+    /*background-color: royalblue;*/
+    border-bottom: 1px solid #e0e4e8;
+    padding-left: 20px;
+  }
+
+  #result {
+
+    border: solid #c2c7d0;
+    height: 220px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: none;
+  }
+
+  #result p {
+    height: 40px;
+    font-size: larger;
+    margin: 0px;
+  }
+
   .body {
-    margin: 0px 0 65px 0;
+    margin: 65px 0 65px 0;
   }
 
   #guide {
-    line-height: 20px;
+    line-height: 0px;
     text-underline: none;
     display: inline-block;
+    height: 0px;
   }
 
   #target {
@@ -254,6 +333,8 @@
     height: 400px;
     margin-top: 20px;
     position: relative;
+    z-index: 0;
+
   }
 
   #chooseLangerage {
@@ -284,6 +365,7 @@
     height: 275px;
     border: none;
     outline: none;
+
   }
 
   #master:hover {
@@ -308,7 +390,7 @@
     font-size: x-large;
     display: inline-block;
     margin-left: 10px;
-    margin-top: -12px;
+    margin-top: -11px;
     height: 55px;
     outline: none;
 
@@ -344,7 +426,7 @@
     height: 50px;
     width: 695px;
     position: absolute;
-    bottom: 0px;
+    bottom: 30px;
   }
 
   #runB1 {

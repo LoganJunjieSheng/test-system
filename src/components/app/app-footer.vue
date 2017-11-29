@@ -1,5 +1,5 @@
 <template>
-  <div class="app-footer">
+  <div class="app-footer" style="z-index: 1000">
     <div class="wrap">
       联系我们:
       <span class="glyphicon glyphicon-globe color"></span> <span> 地址/Add：北京市海淀区知春路7号致真大厦D座11层 </span>
